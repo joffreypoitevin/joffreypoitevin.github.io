@@ -195,6 +195,7 @@ const SCRIPT_URL = "https://lpoicloud.com:5000/save_visit";
 // ✅ Log d'une visite à chaque chargement
 fetch(SCRIPT_URL, {
   method: "POST",
+  headers: { "Content-Type": "application/json" },
   body: JSON.stringify({ type: "visit" })
 });
 
@@ -205,6 +206,7 @@ document.getElementById("surveyForm").addEventListener("submit", function(e) {
   
   fetch(SCRIPT_URL, {
     method: "POST",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       type: "survey",
       Q1: f.get("interested"),
