@@ -123,9 +123,45 @@
           </div>
         </div>
         
-        <button class="start-adventure-btn" id="startAdventureBtn" data-astro-cid-k23zscxn>
-          🚀 Commencer l'Aventure 🚀
-        </button>
+<button id="startAdventureBtn">Commencer l'Aventure</button>
+<div id="paymentCounter">Chargement...</div>
+
+<script>
+const BASE_COUNTER_URL = "https://hitscounter.dev/api/hit?url=https%3A%2F%2Fjoffreypoitevin.github.io%2Fpayment.html&label=payment&icon=github&color=%23198754&message=&style=flat&tz=UTC";
+const counterElement = document.getElementById("paymentCounter");
+
+// 🔹 Lecture du compteur (sans incrément)
+function loadCounter() {
+  fetch(BASE_COUNTER_URL + "&view=true&t=" + Date.now())
+    .then(response => response.json())
+    .then(data => {
+      counterElement.innerText = `Paiements cliqués : ${data.value}`;
+    })
+    .catch(() => {
+      counterElement.innerText = "Erreur chargement compteur";
+    });
+}
+
+// 🔹 Incrémentation + mise à jour affichage
+function incrementCounterAndRedirect() {
+  fetch(BASE_COUNTER_URL + "&t=" + Date.now())
+    .then(response => response.json())
+    .then(data => {
+      counterElement.innerText = `Paiements cliqués : ${data.value}`;
+      setTimeout(() => {
+        window.location.href = "payment.html";
+      }, 500); // petit délai pour voir l'update
+    })
+    .catch(() => {
+      window.location.href = "payment.html";
+    });
+}
+
+document.getElementById("startAdventureBtn").addEventListener("click", incrementCounterAndRedirect);
+
+// Charger le compteur au démarrage
+loadCounter();
+</script>
         
         <p class="cta-subtitle" data-astro-cid-k23zscxn>
           ✨ Prêt pour une expérience inoubliable ? Cliquez et laissez la magie opérer ! ✨
