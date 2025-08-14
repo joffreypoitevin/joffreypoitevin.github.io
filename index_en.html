@@ -48,6 +48,40 @@
         <button id="langSwitch">🇫🇷 Switch to French</button>
       </div>
 
+      <!-- Photos Section -->
+      <div class="photos-section" data-astro-cid-k23zscxn>
+        <h2 class="photos-title" data-astro-cid-k23zscxn>📸 Live the Adventure! 📸</h2>
+        <div class="photos-grid" data-astro-cid-k23zscxn>
+          <div class="photo-card" data-astro-cid-k23zscxn>
+            <img src="https://images.pexels.com/photos/1128318/pexels-photo-1128318.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Family hiking in mountains" data-astro-cid-k23zscxn>
+            <div class="photo-overlay" data-astro-cid-k23zscxn>
+              <p data-astro-cid-k23zscxn">Explore with family</p>
+            </div>
+          </div>
+          
+          <div class="photo-card" data-astro-cid-k23zscxn>
+            <img src="https://images.pexels.com/photos/1365425/pexels-photo-1365425.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Group of friends mountain adventure" data-astro-cid-k23zscxn>
+            <div class="photo-overlay" data-astro-cid-k23zscxn>
+              <p data-astro-cid-k23zscxn">Challenge yourself with friends</p>
+            </div>
+          </div>
+          
+          <div class="photo-card" data-astro-cid-k23zscxn>
+            <img src="https://images.pexels.com/photos/1591056/pexels-photo-1591056.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Kids hiking in nature" data-astro-cid-k23zscxn>
+            <div class="photo-overlay" data-astro-cid-k23zscxn>
+              <p data-astro-cid-k23zscxn">Fun for all ages</p>
+            </div>
+          </div>
+          
+          <div class="photo-card" data-astro-cid-k23zscxn>
+            <img src="https://images.pexels.com/photos/1624496/pexels-photo-1624496.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Secret mountain trails" data-astro-cid-k23zscxn>
+            <div class="photo-overlay" data-astro-cid-k23zscxn>
+              <p data-astro-cid-k23zscxn">Hiking secrets</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Features Section -->
       <div class="features-section" data-astro-cid-k23zscxn>
         <h2 class="features-title" data-astro-cid-k23zscxn>🎮 A Revolutionary Experience 🎮</h2>
@@ -73,35 +107,8 @@
           
           <div class="feature-card" data-astro-cid-k23zscxn>
             <div class="feature-icon" data-astro-cid-k23zscxn">🏃‍♂️</div>
-            <h3 data-astro-cid-k23zscxn">Active Adventure</h3>
-            <p data-astro-cid-k23zscxn">Combine physical exercise and mental challenge for a complete experience</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Photos Section -->
-      <div class="photos-section" data-astro-cid-k23zscxn>
-        <h2 class="photos-title" data-astro-cid-k23zscxn>📸 Live the Adventure! 📸</h2>
-        <div class="photos-grid" data-astro-cid-k23zscxn>
-          <div class="photo-card" data-astro-cid-k23zscxn>
-            <img src="https://images.pexels.com/photos/1128318/pexels-photo-1128318.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Family hiking" data-astro-cid-k23zscxn>
-            <div class="photo-overlay" data-astro-cid-k23zscxn>
-              <p data-astro-cid-k23zscxn">Explore with family</p>
-            </div>
-          </div>
-          
-          <div class="photo-card" data-astro-cid-k23zscxn>
-            <img src="https://images.pexels.com/photos/1365425/pexels-photo-1365425.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Group of friends adventure" data-astro-cid-k23zscxn>
-            <div class="photo-overlay" data-astro-cid-k23zscxn>
-              <p data-astro-cid-k23zscxn">Challenge yourself with friends</p>
-            </div>
-          </div>
-          
-          <div class="photo-card" data-astro-cid-k23zscxn>
-            <img src="https://images.pexels.com/photos/1591056/pexels-photo-1591056.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Kids playing outdoors" data-astro-cid-k23zscxn>
-            <div class="photo-overlay" data-astro-cid-k23zscxn>
-              <p data-astro-cid-k23zscxn">Fun for all ages</p>
-            </div>
+            <h3 data-astro-cid-k23zscxn>Offline & Autonomous</h3>
+            <p data-astro-cid-k23zscxn">Play completely autonomously, at your own pace, no internet connection required</p>
           </div>
         </div>
       </div>
@@ -232,7 +239,7 @@ fetch(SCRIPT_URL, {
     
     .photos-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: calc(var(--spacing) * 3);
     }
     
@@ -304,11 +311,12 @@ fetch(SCRIPT_URL, {
     
     .price-amount {
       font-size: 48px;
-      font-weight: 700;
-      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
       display: block;
       line-height: 1;
       margin: calc(var(--spacing) * 1) 0;
+      color: var(--forest-green);
     }
     
     .price-per {
@@ -365,6 +373,10 @@ fetch(SCRIPT_URL, {
         grid-template-columns: 1fr;
       }
       
+      .photos-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
       .start-adventure-btn {
         font-size: 20px;
         padding: calc(var(--spacing) * 2.5) calc(var(--spacing) * 6);
@@ -372,6 +384,10 @@ fetch(SCRIPT_URL, {
       
       .price-amount {
         font-size: 36px;
+      }
+      
+      .photos-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
