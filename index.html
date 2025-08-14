@@ -123,35 +123,9 @@
           </div>
         </div>
 
-<script>
-  const HITS_URL = "https://hitscounter.dev/api/hit?url=https%3A%2F%2Fjoffreypoitevin.github.io%2Fpayment.html&label=payment&icon=github&color=%23198754&message=&style=flat&tz=UTC";
-
-  // ✅ Lang switch stays the same
-  document.getElementById("langSwitch").addEventListener("click", () => {
-    window.location.href = "index_en.html";
-  });
-
-  // ✅ Payment click -> hit counter + redirect
-  document.getElementById("startAdventureBtn").addEventListener("click", (e) => {
-    const btn = e.currentTarget;
-    btn.disabled = true;                  // prevent double clicks
-    btn.textContent = "⏳ Redirection…";
-
-    // Try to send the hit in a way that survives navigation
-    fetch(HITS_URL + "&_t=" + Date.now(), {
-      method: "GET",
-      mode: "no-cors",
-      keepalive: true
-    }).catch(() => {
-      // Fallback: image ping (works even if fetch is blocked)
-      const img = new Image();
-      img.src = HITS_URL + "&_t=" + Date.now();
-    });
-
-    // Navigate immediately
-    window.location.href = "payment.html";
-  });
-</script>
+        <button class="start-adventure-btn" id="startAdventureBtn" data-astro-cid-k23zscxn>
+          🚀 Commencer l'Aventure 🚀
+        </button>
 
         <p class="cta-subtitle" data-astro-cid-k23zscxn>
           ✨ Prêt pour une expérience inoubliable ? Cliquez et laissez la magie opérer ! ✨
